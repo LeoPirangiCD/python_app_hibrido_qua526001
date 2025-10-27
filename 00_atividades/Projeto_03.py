@@ -6,6 +6,7 @@ import math
 try:
     pass
     # Entrada de dados
+    nome = (input("Informe o nome do usúario ").strip().title())
     peso = float(input("Informe o seu peso em kg: ").strip().replace(",","."))
     altura = float(input("Informe a sua altura em metros: ").strip().replace(",","."))
     
@@ -16,17 +17,20 @@ try:
     #os.system("cls")
     
     # Saída de dados
-    print(f"Seu IMC é: {imc:.2f}")
+    print(f"{nome} seu IMC é: {imc:.2f}")
     
     # Classificação do IMC
     if imc < 18.5:
-        print("Classificação: Abaixo do peso")
-    elif 18.5 <= imc < 24.9:
-        print("Classificação: Peso normal")
-    elif 25 <= imc < 29.9:
-        print("Classificação: Sobrepeso")
+        print("Classificação: Abaixo do peso.")
+    elif imc < 25:
+        print("Classificação: Peso ideal.")
+    elif imc < 30:
+        print("Classificação: Acima do peso.")
+    elif imc < 35:
+        print("Classificação: Obesidade grau 1.")
+    elif imc < 40:
+        print("Classificação: Obesidade grau 2.")
     else:
-        print("Classificação: Obesidade")
-    
+        print("Classificação: Obesidade mórbita.")
 except:
     print("Não foi possível calcular o IMC. Dados errados.")
