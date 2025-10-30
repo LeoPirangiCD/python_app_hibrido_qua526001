@@ -11,7 +11,7 @@ Gênero
 Após isso, o programa deve armazenar esses dados em um dicionário e exibir os dados desse dicionário.
 
 """
-print("Por favor, insira os seguintes dados: ")
+print("\nPor favor, insira os seguintes dados: \n")
 
 
 nome = input("Digite seu nome: ").strip().lower().title()
@@ -28,6 +28,6 @@ dados_usuario = {
     "genero" : genero
 }
 
-print("\n Dados do Usuário:")
+print("\n Dados do Usuário:\n")
 for chave in dados_usuario:
     print(f"{chave.title()}: {dados_usuario[chave]}")
