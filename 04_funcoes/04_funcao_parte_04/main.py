@@ -58,13 +58,8 @@ while True:
             limpar()
             print(f"\nÁrea do triangulo-retângulo é: {resultado:.2f}\n") # round{resultado, 2}
         case "5":
-            time = 0
-            while time < 5:
-                time += 1
-                print(time)
-                continue
                 print("Encerrando programa.")
-            break
+                break
         case _:
             print("\nOpção Inválida. Tente de novo!")
             continue
