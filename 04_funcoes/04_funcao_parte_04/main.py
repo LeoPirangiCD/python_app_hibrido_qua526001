@@ -66,7 +66,7 @@ while True:
                 print("Encerrando programa.")
             break
         case _:
-            print("\nOpção Inválida. Tente de novo!\n")
+            print("\nOpção Inválida. Tente de novo!")
             continue
 
     
