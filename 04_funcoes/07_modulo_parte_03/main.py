@@ -1,0 +1,40 @@
+# Bibliotecas
+from modulo import limpar, primeiro_grau, segundo_grau # importar a função limpar e primeiro_grau da aba modulo.
+
+def main():
+    limpar()
+    while True:
+        print("0 - Sair do programa")
+        print("1 - Calcular equação do 1º grau")
+        print("2 - Calcular equação do 2º grau")
+
+        opcao = input("Informe a opção desejada: ").strip()
+        match opcao:
+            case "0":
+                limpar()
+                print("Programa encerrado.")
+                break
+            case "1":
+                a = float(input("Informe o valor de 'a': ").strip().replace(",","."))
+                b = float(input("Informe o valor de 'b': ").strip().replace(",","."))
+                limpar()
+                x = primeiro_grau(a, b)
+                print(f"x é = {x}")
+                continue
+            case "2":
+                a = float(input("Informe o valor de 'a': ").strip().replace(",","."))
+                b = float(input("Informe o valor de 'b': ").strip().replace(",","."))
+                c = float(input("Informe o valor de 'c': ").strip().replace(",","."))
+                limpar()
+                resultados = segundo_grau(a, b, c)
+                for x in resultados:
+                    print(f"x = {x:.2f}")
+                    continue
+            case _:
+                limpar()
+                print("Opção inválida.")
+
+
+# Protege algoritmo principal (Impede que outros programadores acessem a determinada função.)
+if __name__ == "__main__":
+    main()
