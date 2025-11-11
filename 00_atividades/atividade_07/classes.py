@@ -1,37 +1,31 @@
-import os
-import math
-
-def limpar():
-    os.system("cls" if os.name == "nt" else "clear")
-
 # Classes
 class Conta:
-    def __init__ (self, titular_conta, cpf, numero_agencia, numero_conta, saldo):
-        self.titular_conta = titular_conta
+    # Construtor
+    def __init__(self, titular, cpf, agencia, n_conta, saldo):
+        self.titular = titular
         self.cpf = cpf
-        self.numero_agencia = numero_agencia
-        self.numero_conta = numero_conta
+        self.agencia = agencia
+        self.n_conta = n_conta
         self.saldo = saldo
-
-   # Saída de dados
-    def exibir_dados(self):
-        print(f"Nome: {self.titular_conta}")
+    # Métodos
+    def consultar_dados(self):
+        print(f"Nome do titular da conta: {self.titular}")
         print(f"CPF: {self.cpf}")
-        print(f"Número da agência: {self.numero_agencia}")
-        print(f"Número da conta: {self.numero_conta}")
-        print(f"Saldo disponível: {self.saldo}")
+        print(f"Agência da conta: {self.agencia}")
+        print(f"Número da conta: {self.n_conta}")
+        print(f"{self.titular} o saldo da sua conta é de: {self.saldo:.2f}")
 
-    def depositar_saldo(self):
-        limpar()
-        valor = float(input("Valor a ser adicionado a conta: {}"))
-        if self.saldo == 0:
-            self.saldo = valor
+    def depositar(self, valor):
+        self.saldo += valor
+        return self.saldo
+
+    def sacar(self, valor):
+        if self.saldo >= valor:
+            self.saldo -= valor
+            return self.saldo
         else:
-            self.saldo = self.saldo + valor
+            return "Saldo insuficiente. Saque não permitido."
+       
 
-    def sacar(self):
-        limpar()
-        sacar = float(input("Digite o valor de saque: ").strip().replace(",","."))
-        self.saldo = self.saldo - sacar
-        print(f"Seu saldo atual é: {self.saldo}")
 
+        pass
