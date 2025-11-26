@@ -14,12 +14,14 @@ def main(page: ft.Page):
                 ft.Image(
                     src="Anjo.jpg", 
                     fit=ft.ImageFit.CONTAIN,
-                    error_content=ft.Text("Não foi ppssível carregar a imagem")
+                    error_content=ft.Text("Não foi possível carregar a imagem")
             ),
+            
             alignment=ft.alignment.center,
             expand=True # Centralizador
         )
     )
+            
 
 
 ft.app(main) # Executa a aplicação
