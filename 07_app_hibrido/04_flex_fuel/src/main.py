@@ -69,8 +69,6 @@ def main(page: ft.Page):
                     #height=100000,
                     fit=ft.ImageFit.CONTAIN,
                     #border_radius=ft.border_radius.horizontal(10000000, 10000000),
-                    error_content=ft.Text("Não foi possível carregar a imagem"),
-                    
                                        
             ),
                 alignment=ft.alignment.center,
